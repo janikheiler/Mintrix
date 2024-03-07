@@ -386,5 +386,5 @@ const bool uppercase[][7][5] = {
 
 }
 #else
-#warning message("Too many charsets included. Only first one will be used.")
+#pragma message("More than one charset included. Only first one will be used.")
 #endif

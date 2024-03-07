@@ -12,7 +12,7 @@
 // 1 digit for major version
 // 3 digits for minor version
 // 3 digits for patch version
-#define MINTRIX_VERSION 1001001
+#define MINTRIX_VERSION 1001002
 
 // config
 #define MINTRIX_PIN 2

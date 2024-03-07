@@ -17,8 +17,8 @@ CMintrix::CMintrix() : _server_(80)
   FastLED.setBrightness(100);
   FastLED.setCorrection(UncorrectedColor);
   FastLED.setTemperature(UncorrectedTemperature);
-  //FastLED.clear();
-  //FastLED.show();
+  FastLED.clear();
+  FastLED.show();
 }
 
 void CMintrix::staticWiFi(String wifi_ssid, String wifi_pswd)

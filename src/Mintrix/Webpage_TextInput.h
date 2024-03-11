@@ -35,7 +35,7 @@ Webpage textinput = {
   </head>
   <body>
     <div id="main">
-      <div class="row"><div id="ipt"></div></div>
+      <div class="row"><input id="ipt"/></div>
 
       <div class="row">
         <button class="char" onclick="clickedchar(this.innerText)">1</button>
@@ -160,7 +160,7 @@ function send() {
 
 function clickedchar(c) {
   text = text + c
-  document.getElementById("ipt").innerText = text
+  document.getElementById("ipt").value = text
 }
 
 function clickedfunc(n) {
@@ -168,7 +168,7 @@ function clickedfunc(n) {
   if(n == 1) text = text.substring(0, text.length - 1)
   if(n == 2) send()
 
-  document.getElementById("ipt").innerText = text
+  document.getElementById("ipt").value = text
 }
 )====="
 };

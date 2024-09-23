@@ -68,6 +68,7 @@ class CMintrix
     // standard fast-led things
     void show() {FastLED.show();};
     void clear() {FastLED.clear();};
+    void fill(const struct CRGB &color) {fill_solid(leds, 81, color);}
 
     // wifi
     void staticWiFi(String wifi_ssid, String wifi_pswd = "");

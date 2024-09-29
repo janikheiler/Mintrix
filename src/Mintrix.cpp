@@ -68,7 +68,7 @@ int CMintrix::dynamicWiFi_state()
   return _mintrix_id_;
 }
 
-void CMintrix::startWeb(String domain_name = "", bool domain = true)
+void CMintrix::startWeb(String domain_name, bool domain)
 {
 	_has_domain_ = domain;
 	_domain_name_ = (domain_name == "") ? MINTRIX_DOMAIN : domain_name;
@@ -80,4 +80,10 @@ void CMintrix::startWeb(String domain_name = "", bool domain = true)
 	_server_.on("/",          [](){Mintrix.send(200, "text/html",       Mintrix.getPageHTML());});
 	_server_.on("/style.css", [](){Mintrix.send(200, "text/css",        Mintrix.getStyleCSS());});
 	_server_.on("/script.js", [](){Mintrix.send(200, "text/javascript", Mintrix.getScriptJS());});
+}
+
+void CMintrix::handleWeb()
+{
+	if(_has_domain_) _dns_.processNextRequest();
+	_server_.handleClient();
 }

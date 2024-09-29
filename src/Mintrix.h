@@ -47,6 +47,8 @@ class CMintrix
     int _mintrix_id_ = -1;
     String _wifi_ssid_ = "";
     String _wifi_pswd_ = "";
+    bool _has_domain_ = false;
+    String _domain_name_ = "";
 
     // web
     DNSServer _dns_;
@@ -78,7 +80,7 @@ class CMintrix
 		int id() {return _mintrix_id_;};
 
     // web
-    void startWeb();
+    void startWeb(String domain_name = "", bool domain = true);
     void handleWeb() {_dns_.processNextRequest(); _server_.handleClient();};
     void onData(void (*handler)()) {_server_.on("/data/",  handler); _server_.on("/data",  handler);};
 

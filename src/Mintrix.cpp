@@ -21,6 +21,12 @@ CMintrix::CMintrix() : _server_(80)
   FastLED.show();
 }
 
+void CMintrix::connect(String wifi_ssid, String wifi_pswd)
+{
+	if(wifi_pswd == "") WiFi.begin(wifi_ssid);
+	else WiFi.begin(wifi_ssid, wifi_pswd);
+}
+
 void CMintrix::staticWiFi(String wifi_ssid, String wifi_pswd)
 {
   WiFi.mode(WIFI_AP);

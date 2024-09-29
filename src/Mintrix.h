@@ -71,6 +71,7 @@ class CMintrix
     void fill(const struct CRGB &color) {fill_solid(leds, 81, color);}
 
     // wifi
+    void connect(String wifi_ssid, String wifi_pswd);
     void staticWiFi(String wifi_ssid, String wifi_pswd = "");
     void dynamicWiFi_start(String wifi_pswd = "");
     int dynamicWiFi_state();

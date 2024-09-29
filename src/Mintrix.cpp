@@ -68,9 +68,12 @@ int CMintrix::dynamicWiFi_state()
   return _mintrix_id_;
 }
 
-void CMintrix::startWeb()
+void CMintrix::startWeb(String domain_name = "", bool domain = true)
 {
-  _dns_.start(53, MINTRIX_DOMAIN, IPAddress(10, 10, 10, 1));
+	_has_domain_ = domain;
+	_domain_name_ = (domain_name == "") ? MINTRIX_DOMAIN : domain_name;
+	if(_has_domain_) _dns_.start(53, _domain_name_, IPAddress(10, 10, 10, 1));
+	
 	_server_.onNotFound([](){Mintrix.send(404);});
 	_server_.begin();
 

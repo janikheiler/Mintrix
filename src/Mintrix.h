@@ -81,7 +81,7 @@ class CMintrix
 
     // web
     void startWeb(String domain_name = "", bool domain = true);
-    void handleWeb() {_dns_.processNextRequest(); _server_.handleClient();};
+    void handleWeb();
     void onData(void (*handler)()) {_server_.on("/data/",  handler); _server_.on("/data",  handler);};
 
     void setWebPage(MintrixWeb::Webpage wp) {_web_page_ = wp;};
